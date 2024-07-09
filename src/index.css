@@ -1,13 +1,84 @@
-body {
+@import url("https://fonts.googleapis.com/css2?family=Radio+Canada:ital,wght@0,300..700;1,300..700&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.spinner {
+  @apply border-solid border-t-transparent rounded-full;
+  animation: spin linear 0.3s infinite;
+}
+
+.custom_scrollbar {
+  @apply scrollbar scrollbar-w-2 scrollbar-thumb-neutral-400 scrollbar-thumb-rounded-2xl;
+}
+
+@keyframes appear {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes appear2 {
+  from {
+    opacity: 0;
+    scale: 0.95;
+  }
+  to {
+    opacity: 1;
+    scale: 1;
+  }
+}
+/* *:not(.notification .spinner) {
+  transform: translateY(15px);
+  opacity: 0;
+  animation: appear linear forwards;
+
+  animation-timeline: view(90vw 10px);
+   animation-range: 10px contain; 
+} */
+.appear {
+  animation: appear2 linear 0.3s;
+  opacity: 1;
+}
+.link-border {
+  @apply border-transparent border-white relative before:content-[''] before:absolute before:w-0 before:h-[2px] before:bottom-0 before:left-0  before:transition-all before:duration-300 hover:before:w-full;
+}
+
+/* Reset or override the properties for the #notification element */
+
+.scrollbar_div {
+  @apply scrollbar scrollbar-w-4 scrollbar-thumb-neutral-400  h-[calc(100dvh)] overflow-y-auto;
+}
+
+body {
+  @apply bg-[#f5f3f3];
+  @apply scrollbar scrollbar-w-4 scrollbar-thumb-neutral-400  h-[calc(100dvh)] overflow-y-auto;
+}
+
+@font-face {
+  font-family: "SFProTextHeavyItalic";
+  src: url("/public/fonts/SF-Pro-Text-HeavyItalic.otf") format("opentype");
+  font-weight: 900;
+}
+@font-face {
+  font-family: "SFProDisplayRegularItalic";
+  src: url("/public/fonts/SF-Pro-Display-RegularItalic.otf") format("opentype");
 }

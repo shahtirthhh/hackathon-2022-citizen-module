@@ -7,7 +7,7 @@
     <meta name="theme-color" content="#000000" />
     <meta
       name="description"
-      content="Web site created using create-react-app"
+      content="A prototype of a solution solving real world problem"
     />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <!--
@@ -24,11 +24,36 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
+    <title>Citizen module - 2022</title>
   </head>
   <body>
+    <!-- <script defer>
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          console.log(entry);
+          if (entry.isIntersecting) {
+            entry.target.classList.add("appear");
+          } else {
+            entry.target.classList.remove("appear");
+          }
+        });
+      });
+
+      const observe = (element) => {
+        observer.observe(element);
+        if (element.childNodes.length > 0) {
+          element.childNodes.forEach((node) => {
+            observe(node);
+          });
+        }
+      };
+      const hiddenElements = document.querySelectorAll("*");
+      hiddenElements.forEach((el) => {
+        observe(el);
+      });
+    </script> -->
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
+    <div id="root" style="height: 100%"></div>
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
